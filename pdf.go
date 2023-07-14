@@ -41,7 +41,8 @@ func writeLogo(pdf *gopdf.GoPdf, logo string, from string) {
 }
 
 func writeTitle(pdf *gopdf.GoPdf, title, id, date string) {
-	_ = pdf.SetFont("Inter-Bold", "", 24)
+    pdf.AddTTFFont("NotoSansSC-Regular", "NotoSansSC-Regular.ttf")
+    _ = pdf.SetFont("NotoSansSC-Regular", "", 24)
 	pdf.SetTextColor(0, 0, 0)
 	_ = pdf.Cell(nil, title)
 	pdf.Br(36)
